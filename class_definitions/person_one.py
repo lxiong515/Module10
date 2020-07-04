@@ -16,9 +16,14 @@ class Employee(object):
         :raises keyError:
         """
 
-    def __init__(self, fname, lname, address, phone, is_salary, start_date, salary_amount):
+    def __init__(self, fname, lname, address, phone, is_salaried, start_date, salary_amount):
         self.last_name = lname
         self.first_name = fname
+        self.address = address
+        self.phone = phone
+        self.is_salaried = is_salaried
+        self.start_date = start_date
+        self.salary_amount = salary_amount
 
     def set_last_name(self, lname):
         self.last_name = lname
@@ -32,24 +37,25 @@ class Employee(object):
     def set_phone(self, phone):
         self.phone = phone
 
-    def set_is_salaried(self, is_salary):
-        self.is_salaried = is_salary
+    def set_is_salaried(self, is_salaried):
+        self.is_salaried = is_salaried
 
     def set_start_date(self, start_date):
         self.start_date = start_date
+            #(datetime.strftime('%Y-%m-%d'))#start_date
 
     def set_salary_amount(self, salary_amount):
         self.salary_amount = salary_amount
 
-        @property
-        def first_name(self):
-            return self._first_name
+    @property
+    def first_name(self):
+        return self._first_name
 
-        @first_name.setter
-        def first_name(self, value):
-            if value.isdigit():
-                raise ValueError
-            self._first_name=value
+    @first_name.setter
+    def first_name(self, value):
+        if value.isdigit():
+            raise ValueError
+        self._first_name=value
 
     def display(self):
         """
@@ -80,18 +86,17 @@ class Employee(object):
         #output_string = fname + space + lname + line_break + address
         #(or address before first comma + line_break + address after first comma
         #fname + space + lname = line_break
-        return(self.first_name, self.last_name, self.address, self.is_salary, self.start_date, self.salary_amount)
+        return self.first_name + ' ' + self.last_name,"\n", self.address, self.is_salaried, self.start_date, self.salary_amount
 
     def __str__(self):
-        return str(self.first_name, self.last_name, self.address, self.is_salary, self.start_date, self.salary_amount)
-
+        return str(self.first_name, self.last_name, self.address, self.is_salaried, self.start_date, self.salary_amount)
 
     def __repr__(self):
         pass
 #driver
 #valid person
 if __name__ == '__main__':
-    employee1 = Employee('Sasha', 'Patel', '123 Main St\n Urban, IA', True, 6-28-2019, 40,000.00)
+    employee1 = Employee('Sasha', 'Patel', '123 Main St \nUrban, IA', True, 6-28-2019, 40000, 90)
     #print(employee1)
     #print(str(employee1))
     print(employee1.display())
