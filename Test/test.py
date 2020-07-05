@@ -25,15 +25,21 @@ class MyTestCase(unittest.TestCase):
 
     #test all attributes
     def test_display(self):
-        self.assertEqual(str(self.student), "Duck, Daisy has major: Science with gpa: 0.0")
+        self.assertEqual(str(self.student1), "Duck, Donald has major: Science with gpa: 0.0")
 
     #Write unit test test_student_str(self)
+    def test_student_str(self):
+        self.assertEqual(str(self.student), "Duck, Daisy has major: Science with gpa: 0.0")
 
 #Write unit test test_object_not_created_error_last_name(self) that expect exception raised.
+    def test_object_not_created_error_last_name(self):
+        with self.assertRaises(ValueError):
+            p = student.Student(444, 'Daisy')
 
 #Write test_object_not_created_error_first_name(self)
-
-#Write test_object_not_created_error_first_name(self)
+    def test_object_not_created_error_fist_name(self):
+        with self.assertRaises(ValueError):
+            p = student.Student('Duck', 123)
 
 #Write test_object_not_created_error_major(self)
 
