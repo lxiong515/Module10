@@ -7,7 +7,7 @@ This program is a test of the class
 .
 """
 import unittest
-from class_definitions import person_one as t
+from class_definitions import person_file_to_test as t
 
 
 class MyTestCase(unittest.TestCase):
