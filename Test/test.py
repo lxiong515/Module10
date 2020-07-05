@@ -27,5 +27,18 @@ class MyTestCase(unittest.TestCase):
     def test_display(self):
         self.assertEqual(str(self.student), "Duck, Daisy has major: Science with gpa: 0.0")
 
+    #Write unit test test_student_str(self)
+
+#Write unit test test_object_not_created_error_last_name(self) that expect exception raised.
+
+#Write test_object_not_created_error_first_name(self)
+
+#Write test_object_not_created_error_first_name(self)
+
+#Write test_object_not_created_error_major(self)
+
+#Write test_object_not_created_error_gpa(self)
+
+
 if __name__ == '__main__':
     unittest.main()
