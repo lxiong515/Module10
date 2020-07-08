@@ -1,3 +1,12 @@
+"""
+Program: class_composition.py
+Author:  Luke Xiong
+Date: 7/7/2020
+
+create a class with a data member of the type of a class you defined
+
+"""
+
 class Student(object):
     """Student class"""
     def __init__(self, lname, fname):
@@ -55,11 +64,27 @@ class Address:
 
     def change_major(self):
         #changes major
+        """
+    This function will return a new major.
+    Use reST style.
+
+    :param major: an area of study
+    :returns: a new major
+
+    """
         change = Major()
         return change
 
     def update_gpa(self):
         #updates gpa
+        """
+    This function will update gpa.
+    Use reST style.
+
+    :param gpa: a number
+    :returns: new number
+
+    """
         update = GPA()
         return update
 
