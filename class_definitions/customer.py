@@ -52,12 +52,13 @@ class Customer:
         pass
     #display for printing
     def display(self):
-        return self.customer_id, self.first_name, self.last_name, self.phone_number, self.address
+        #return self.customer_id + '\n' + self.first_name + '\n' + self.last_name + '\n' + self.phone + '\n' + self.address
+        return 'Customer ID: ' + str(self.customer_id) + '\n' + self.first_name + ' ' + self.last_name + '\n' + self.phone_number + '\n' + self.address
 
     def __str__(self):
         return (self.customer_id, self.first_name, self.last_name, self.phone_number, self.address)
         #return cust
-        pass
+
     def __repr__(self):
         return (self.customer_id, self.first_name, self.last_name, self.phone_number, self.address)
 
@@ -67,6 +68,7 @@ if __name__=='__main__':
     print(customer1.display())
     try:
         customer2 = Customer('this should fail')
+        print(customer2.display())
     except AttributeError:
         print('Successfully errored out!')
 
